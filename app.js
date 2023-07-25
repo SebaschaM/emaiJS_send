@@ -46,7 +46,6 @@ function resetForm(e) {
 
 function sendEmail(e) {
   e.preventDefault();
-  console.log("Sending email...");
   const modal = document.querySelector("#loaderModal");
   const loader = document.querySelector("#loader");
   const confirmation = document.querySelector("#confirmation");
@@ -59,7 +58,6 @@ function sendEmail(e) {
     loader.style.display = "none";
     confirmation.style.display = "flex";
     setTimeout(() => {
-      console.log("Email sent");
       confirmation.style.display = "none";
       modal.style.display = "none";
     }, 3000); // Wait for 5 seconds
@@ -87,7 +85,6 @@ function validateForm(e) {
     activateSend();
   } else {
     deactivateSend();
-    console.log("All fields are required");
   }
 }
 
@@ -104,9 +101,7 @@ function validateEmail(field) {
 
   if (regExp.test(emailMessage)) {
     validateInput(field);
-    console.log("Valid email");
   } else {
     showError(field);
-    console.log("Invalid email");
   }
 }
